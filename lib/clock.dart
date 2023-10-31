@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:home_widget/home_widget.dart';
 import 'dart:async';
 import 'package:clock_28hr/util.dart';
+
+const String androidWidgetName = 'ClockWidget';
 
 class Clock extends StatefulWidget {
   const Clock({super.key});
@@ -23,9 +26,15 @@ class _ClockState extends State<Clock> {
 
   void startTimer() {
     _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
+      String timeNow = get28HourClockTime();
       setState(() {
-        timeIn28Hr = get28HourClockTime();
+        timeIn28Hr = timeNow;
       });
+
+      HomeWidget.saveWidgetData<String>('time_now', timeNow.substring(0, 8));
+      HomeWidget.updateWidget(
+        androidName: androidWidgetName,
+      );
     });
   }
 

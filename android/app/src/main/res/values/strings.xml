@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="appwidget_text">EXAMPLE</string>
-    <string name="add_widget">Add widget</string>
-    <string name="app_widget_description">This is an app widget description</string>
+    <string name="appwidget_text">28:00</string>
+    <string name="add_widget">Clock widget</string>
+    <string name="app_widget_description">This widget shows time in 28 hour format.</string>
 </resources>
